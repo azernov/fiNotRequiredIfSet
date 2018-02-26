@@ -1,2 +1,15 @@
 # fiNotRequiredIfSet
-Formit validator for validate field only if not set another field
+
+Валидатор, проверяющий установку хотя бы одного из полей
+
+Для данного валидатора в при вызове formit необходимо указать параметры:
+
+```
+customValidators = 'foNotRequiredIfSet'
+[поле].fiNotRequiredIfSetMessage = 'Текст ошибки для поля'
+
+в параметре validate для полей, валидируемых этим валидатором нужно указать
+.....поле:fiNotRequiredIfSet=поле2|поле3,поле2:fiNotRequiredIfSet=поле|поле3.....
+
+Тогда если хотя бы одно из полей заполнено, у второго не будет ошибки "Укажите поле"
+```
